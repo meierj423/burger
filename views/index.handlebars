@@ -1,0 +1,57 @@
+<div class="container">
+    <header
+        style="background-image: url(https://thumbs.dreamstime.com/b/burger-pattern-hand-drawn-illustration-bright-cartoon-illustration-menu-design-fabric-wallpaper-burger-seamless-pattern-122893630.jpg);">
+        >
+    </header>
+
+    <div id="title">
+        <h1>Devour a Burger</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-heading" id="left-heading"><strong>Burgers to Devour</strong></div>
+                <div class="card-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        <span><strong> {{this.id}}. {{this.burger_name}} </strong></span>
+                        <button type="button" class="eat-burger btn btn-dark" data-id="{{this.id}}">Devour</button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card card-default">
+                <div class="card-heading" id="right-heading"><strong>Devoured Burgers</strong></div>
+                <div class="card-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span><strong> {{this.id}}. {{this.burger_name}} </strong></span>
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="burger-form">
+        <div class="form-group">
+            <label>Enter a burger</label>
+            <input type="text" id="new-burger">
+            <button type="submit" class="btn btn-primary" id="add-burger">SEND</button>
+        </div>
+
+        <footer
+            style="background-image: url(https://thumbs.dreamstime.com/b/burger-pattern-hand-drawn-illustration-bright-cartoon-illustration-menu-design-fabric-wallpaper-burger-seamless-pattern-122893630.jpg);">
+            >
+        </footer>
+    </form>
