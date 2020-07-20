@@ -1,18 +1,20 @@
 const connection = require("../config/connection.js");
 
 const orm = {
-  selectAll: (tableInput, cb) => {
+  selectAll: (table, cb) => {
     const queryString = "SELECT * FROM ??";
-    connection.query(queryString, [tableInput], (err, result) => {
+
+    connection.query(queryString, table, (err, result) => {
       if (err) {
         throw err;
       }
       cb(result);
     });
   },
-  insertOne: (table, newRowData, cb) => {
+
+  insertOne: (table, newBurgerData, cb) => {
     const queryString = "INSERT INTO ?? SET ?";
-    const values = [table, newRowData];
+    const values = [table, newBurgerData];
 
     connection.query(queryString, values, (err, result) => {
       if (err) {
@@ -22,11 +24,11 @@ const orm = {
     });
   },
 
-  updateOne: (table, updateValues, condition, cb) => {
+  updateOne: (table, devouredState, condition, cb) => {
     const queryString = "UPDATE ?? SET ? WHERE ?";
-    const values = [table, updateValues, condition];
 
-    console.log(queryString);
+    const values = [table, devouredState, condition];
+
     connection.query(queryString, values, (err, result) => {
       if (err) {
         throw err;
