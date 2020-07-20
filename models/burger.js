@@ -11,8 +11,8 @@ const burger = {
       cb(res);
     });
   },
-  updateOne: (burgerData, criteria, cb) => {
-    orm.updateOne("burgers", burgerData, criteria, (res) => {
+  updateOne: (devouredState, condition, cb) => {
+    orm.updateOne("burgers", devouredState, condition, (res) => {
       cb(res);
     });
   },
