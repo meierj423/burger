@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Devour a Burger
 
 ![](images/screenshot-1.png)
@@ -48,3 +49,6 @@ N/A
 For any additional questions, please send me an e-mail at jackson.meier423@gmail.com
 
 Link to my GitHub: https://github.com/meierj423
+=======
+# burger
+>>>>>>> d5544fb659b64237fefe19196c72a976ff2d595b
